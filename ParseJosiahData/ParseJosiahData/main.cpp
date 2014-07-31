@@ -5,6 +5,7 @@
 #include<vector>
 #include<sstream>
 #include<iterator>
+#include<cstdlib>
 
 
 using namespace std;
@@ -14,7 +15,7 @@ using namespace std;
 void doEverything() {
 	
 	string currentLine = "";
-	int i = 0;	
+	
 	vector<string> words;
 	string tempWord = "";
 	vector<vector<string>> vecWords;
@@ -26,52 +27,57 @@ void doEverything() {
 	if (myfilestream.is_open()) {
 		cout<< "file is open and working" << endl;
 
-	}
+	}	
+		int k = 1;
+		getline( myfilestream ,currentLine); //get the first line and throw it away
 		while (!myfilestream.eof()) {
-			if (i == 0) { //dont read the first line
-				i++;
-				continue;
-			}	
-				
-			getline( myfilestream ,currentLine); //get the line
+	
+			getline( myfilestream ,currentLine); //get the non first line
 			
-			if (currentLine[0] != i) {
-				cerr<<"Off by Number of lines error" << endl;
-			}
-
+			
 			int j=0;
-			while (currentLine[j]) {  //divide the line into words
-				//if (currentLine[j] == "L" && !isspace(currentLine[j+2] ) ) {
-				//	words.push_back(currentLine[j]);
-				//}
-				
-				if ( isspace(currentLine[j] && j != 0 && j != 1 ) ) {
+			while (j < currentLine.length()) {  //divide the line into words
+			
+				if ( isspace(currentLine[j]  ) ) {
 					words.push_back(tempWord);
+					tempWord = "";   //This line right here drove me insane for hours
 					j++;
-					continue;
-				}
-
+					
+				} else {
+				
 				tempWord = tempWord + currentLine[j];
 				j++;
+				}
+				if ( j == currentLine.length() ) {
+					words.push_back(tempWord);
+					tempWord = "";
+					j++;
+				}
+
 			}
 			vecWords.push_back(words);
-			cout<<"Finished Reading a line:" << i << endl;
+			words.clear();
+			cout<<"Finished Reading a line:" << k << endl;
+			
+			k++;
 		}
 
+		cout<< vecWords.size() << endl;
 		
 		for (int i = 0; i < vecWords.size(); i++ ) {
-			for (int j = 1; j < vecWords[i].size() -1 ; j++ ) {
-				combinedResult = combinedResult + vecWords[i][j] ;
-
-			}
-			vecWords[i][1] = combinedResult;
-			combinedResult = "";
+			vecWords[i][2] = "";
+			vecWords[i][2] = vecWords[i][7] + vecWords[i][8] + vecWords[i][9] + vecWords[i][10] + vecWords[i][11] + vecWords[i][12] + vecWords[i][13] + vecWords[i][14] + vecWords[i][15] + vecWords[i][16] + vecWords[i][17];
+			
 		}
 		
+
+
 	myfilestream.close();
 
+	
+
 	for(int i = 0; i < vecWords.size(); i++) {
-		cout<< vecWords[i][0] << " results to: " << vecWords[i][1] << endl;
+		cout<< vecWords[i][1] << " results to: " << vecWords[i][2] << endl;
 	}
 
 
