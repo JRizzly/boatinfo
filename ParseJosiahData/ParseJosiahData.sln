@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ParseJosiahData", "ParseJosiahData\ParseJosiahData.vcxproj", "{35564B64-D856-4DEB-B8FE-FF64C3EC795B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35564B64-D856-4DEB-B8FE-FF64C3EC795B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{35564B64-D856-4DEB-B8FE-FF64C3EC795B}.Debug|Win32.Build.0 = Debug|Win32
+		{35564B64-D856-4DEB-B8FE-FF64C3EC795B}.Release|Win32.ActiveCfg = Release|Win32
+		{35564B64-D856-4DEB-B8FE-FF64C3EC795B}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
