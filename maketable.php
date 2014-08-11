@@ -259,7 +259,19 @@
 		}
     }
     
-    
+    function displayNL( $KEY ) {
+        
+		switch ( true ) {
+			case ( is_numeric( strpos($KEY, 'NL1') ) ) :
+				echo " Masthead Light <br> ;lkasdjf lklkds kl <br> ;lakdjflksf ";
+				break;
+			case ( is_numeric ( strpos($KEY, 'NL2') ) ) :
+				echo "Yes" ;
+				break;
+			default:
+				echo "Make sure you selected somthing OR This Combination Does Not Exist";
+		}
+    }
     
     
     $length = $_POST["vessel_length"];
@@ -339,7 +351,7 @@
 <tr>
 <td></td>
 <td>Navigation Lights</td>
-<td> <!-- Need to put in table here --> Need to finish this one... </td>
+<td> <?php displayNL($Key); ?>  In progress  </td>
 <td></td>
 </tr>
 <tr>
