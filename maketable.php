@@ -263,7 +263,7 @@
         
 		switch ( true ) {
 			case ( is_numeric( strpos($KEY, 'NL1') ) ) :
-				echo " Masthead Light <br> ;lkasdjf lklkds kl <br> ;lakdjflksf ";
+				echo " Masthead Light <br> ";
 				break;
 			case ( is_numeric ( strpos($KEY, 'NL2') ) ) :
 				echo "Yes" ;
